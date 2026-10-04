@@ -1,0 +1,2 @@
+Should some JS functions be put in this utilities folder and shared among the files?
+

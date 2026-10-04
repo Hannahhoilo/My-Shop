@@ -1,0 +1,275 @@
+/* 12 grid 
+-	The solution must be fully 
+responsive with at least 3 breakpoints
+ starting with mobile sizes under 768px.
+*/
+
+html,
+body {
+  margin: 0;
+  font-family: monospace;
+  background-color: #fafafa;
+}
+
+.img-responsive {
+  width: 100%;
+  display: block;
+}
+
+/* Header */
+.header-area {
+  color: #ffda46;
+  background-color: #252029;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  position: sticky;
+  top: 0;
+}
+
+.header-area__logo {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.header-area a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-area ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+/*
+    Default-stil for knappene
+*/
+.button {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  width: 100%;
+  color: #101010;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+}
+
+.product-filters{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-filters__button {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  width: 20%;
+  color: #101010;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.button--delete {
+  font-size: larger;
+  font-weight: bolder;
+  background-color: #c22020;
+  border-color: #902525;
+  color: #ffffff;
+}
+
+.button--delete:hover {
+  background-color: #902525;
+  border-color: #5f1c1c;
+}
+
+.button--clear-cart {
+  font-size: larger;
+  font-weight: bolder;
+  background-color: #c22020;
+  border-color: #902525;
+  color: #ffffff;
+  width: 30%;
+}
+.button--clear-cart:hover {
+  background-color: #902525;
+  border-color: #5f1c1c;
+}
+
+.product-box {
+  /*8px 0 */
+  padding: 8px 0px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 1px 5px #140d0833;
+  border-radius: 10px; /* en regel inni en annen her */
+  background-color: white;
+
+  .product-box__title {
+    font-family: Arial, Helvetica, sans-serif;
+    /* top, right, bottom, left */
+    margin: 0 0 4px 8px;
+  }
+}
+/*
+    ***
+    ***
+    Grid-systemet.
+    ***
+    ***
+*/
+.grid-12-column {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+
+  max-width: 90%; /* ← stopper griden på bredere skjermer */
+  /*margin: 0 auto;    /* ← sentrerer griden */
+  margin: 20px 20px 30px 40px;
+  /*     ↑    ↑    ↑    ↑
+     top  right bottom left */
+  padding: 0 16px; /* ← litt luft på mobil */
+}
+
+/*
+    Default-kode for mobil < 768px (xs)
+*/
+.xs-12 {
+  grid-column: auto / span 12;
+}
+
+.xs-6 {
+  grid-column: auto / span 6;
+}
+
+/*
+    Kode for mobiler/tablet fra og med og over 768px (sm)
+*/
+@media (width >= 768px) {
+  .sm-6 {
+    grid-column: auto / span 6;
+  }
+
+  .sm-4 {
+    grid-column: auto / span 4;
+  }
+
+  .sm-3 {
+    grid-column: auto / span 3;
+  }
+}
+
+/*
+    Kode for tablet/laptop fra og med og over 992px (md)
+*/
+@media (width >= 992px) {
+  .md-6 {
+    grid-column: auto / span 6;
+  }
+
+  .md-4 {
+    grid-column: auto / span 4;
+  }
+
+  .md-3 {
+    grid-column: auto / span 3;
+  }
+}
+
+/*
+    Kode for tablet/laptop fra og med og over 1200px (lg)
+*/
+@media (width >= 1200px) {
+  .lg-6 {
+    grid-column: auto / span 6;
+  }
+
+  .lg-4 {
+    grid-column: auto / span 4;
+  }
+
+  .lg-3 {
+    grid-column: auto / span 3;
+  }
+}
+
+/* Footer start */
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background: #252029;
+  color: #ffda46;
+  display: flex;
+  justify-content: center;
+}
+
+.footer section {
+  text-align: center;
+  width: 33%;
+}
+
+.footer__column-2 {
+  flex-grow: 2;
+}
+
+.footer section h3 {
+  font-weight: 300;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.footer__column-1 a {
+  display: block;
+  text-decoration: none;
+  color: #ffda46;
+  margin-bottom: 10px;
+}
+
+.footer__email {
+  width: 80%;
+  max-width: 400px;
+  height: 2rem;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px auto;
+  outline: none;
+  border: none;
+}
+
+.footer__button {
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #ffda46;
+  color: #ffda46;
+}
+
+.footer__icons {
+  margin-top: 30px;
+  gap: 8px;
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  font-size: 22px;
+}
+
+.footer__icons i {
+  cursor: pointer;
+}
+/*----- Footer end -----*/

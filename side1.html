@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&K</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="images/chicken-icon.jpg">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
+    <script type="module" src="/scripts/side1.js">
+    </script>
+</head>
+
+<body>
+
+    <header class="header-area">
+
+        <section class="header-area__logo">
+            <i class="fa-solid fa-drumstick-bite"></i>
+            <a href="side1.html">K&K</a>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="side1.html">Hjem</a></li>
+                <li><a href="***">Våre partnere</a></li>
+                <li><a href="***">Om oss</a></li>
+                <li><a href="***">Kontakt</a></li>
+                <li><i class="fa-solid fa-cart-shopping"></i>
+                    <a href="side2.html">Handlekurv</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section class="grid-12-column">
+
+        <div class="xs-12">
+            <section class="product-filters">
+                <button class="button product-filters__button" id="show-all-btn">Vis alle produkter</button>
+                <button class="button product-filters__button" id="show-by-frozen-product-btn">Vis
+                    frossenprodukter</button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="id-txt" id="show-by-id-btn" type="text" placeholder="🔍 Søk etter ID...">
+            </section>
+        </div>
+    </section>
+
+    <section id="product-section" class="grid-12-column product-section">
+        <!-- Produkter vil bli dynamisk lagt til fra JS -->
+    </section>
+
+
+    <!-- Footer område -->
+    <footer>
+
+        <section class="footer">
+            <section class="footer__column-1">
+                <h3>USEFUL LINKS</h3>
+                <a href="***">About</a>
+                <a href="***">Services</a>
+                <a href="***">Contact</a>
+                <a href="***">Blog</a>
+            </section>
+            <section class="footer__column-2">
+                <h3>NEWSLETTER</h3>
+                <form>
+                    <input type="email" class="footer__email" placeholder="Your Email Adress" required>
+                    <br>
+                    <button type="submit" class="footer__button">SUBSCRIBE</button>
+                </form>
+            </section>
+            <section class="footer__column-3">
+                <h3>ADRESS</h3>
+                <p>Snaddergata 35, 1364, Oslo <br> Norge</p>
+                <h3>Følg oss</h3>
+                <section class="footer__icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </section>
+            </section>
+        </section>
+    </footer>
+    <!-- Footer end -->
+
+</body>
+
+</html>
