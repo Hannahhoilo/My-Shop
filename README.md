@@ -1,0 +1,3 @@
+En responsiv nettbutikk laget uten rammeverk, med HTML5, CSS3 og JavaScript (ES6+). Produktene hentes fra en egen modul bygget med IIFE-mønsteret, som bare eksponerer en kopi av dataene via structuredClone, og rendres dynamisk på siden. Handlekurven lagres i localStorage og deles mellom sidene gjennom en felles hjelpefil, med totalpris, mulighet til å fjerne varer og en teller i headeren som alltid viser antall varer. Når en vare legges i kurven, vises en bekreftelse i et <dialog>-element.
+
+Layouten bygger på et eget 12-kolonners grid-system med CSS Grid og tre breakpoints (768, 992 og 1200 px), med mobil først. CSS-en følger BEM-navngivning, og ikoner kommer fra Font Awesome.
