@@ -145,8 +145,12 @@ body {
   .product-box__title {
     font-family: Arial, Helvetica, sans-serif;
     /* top, right, bottom, left */
-    margin: 0 0 4px 8px;
+    margin: 0 0 4px 0px;
   }
+}
+
+.text-content {
+  padding: 0 8px;
 }
 
 /*
@@ -249,7 +253,7 @@ body {
 
   max-width: 90%; /* ← stopper griden på bredere skjermer */
   /*margin: 0 auto;    /* ← sentrerer griden */
-  margin: 20px 20px 30px 40px;
+  margin: 20px auto 30px auto;
   /*     ↑    ↑    ↑    ↑
      top  right bottom left */
   padding: 0 16px; /* ← litt luft på mobil */
