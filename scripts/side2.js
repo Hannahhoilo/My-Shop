@@ -1,20 +1,19 @@
+// Importer handlekurv-funksjoner
+import {
+  getCart,
+  saveCart,
+  updateCartBadge,
+} from "./utilities/cartUtilities.js";
+
 // Henter HTML
 const cartSection = document.querySelector("#cart-section");
 const cartSummary = document.querySelector("#cart-summary");
 const clearCartBtn = document.querySelector("#clear-cart-btn");
 
-// Henter handlekurv fra localStorage
-const getCart = () => {
-  const lSKey = "cart";
-  if (localStorage.getItem(lSKey) != null) {
-    return JSON.parse(localStorage.getItem(lSKey));
-  } else {
-    return [];
-  }
-};
-
 // Lager handlekurv
 const renderCart = () => {
+  updateCartBadge();
+
   const cart = getCart();
 
   if (cart.length === 0) {
@@ -49,8 +48,8 @@ const renderCart = () => {
   // Fjern-knapper
   const removeBtns = document.querySelectorAll(".button--delete");
   removeBtns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      const index = parseInt(event.target.dataset.index);
+    btn.addEventListener("click", () => {
+      const index = parseInt(btn.dataset.index);
       removeFromCart(index);
     });
   });
@@ -60,7 +59,7 @@ const renderCart = () => {
 const removeFromCart = (index) => {
   const cart = getCart();
   cart.splice(index, 1); // fjern ett element
-  localStorage.setItem("cart", JSON.stringify(cart));
+  saveCart(cart);
   renderCart();
 };
 

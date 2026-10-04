@@ -1,5 +1,10 @@
 // Importer modul
 import ProductModule from "./modules/ProductModule.js";
+import {
+  getCart,
+  saveCart,
+  updateCartBadge,
+} from "./utilities/cartUtilities.js";
 
 // Henter HTML
 const showByFrozenProductBtn = document.querySelector("#show-by-frozen-product-btn");
@@ -66,20 +71,36 @@ const showById = () => {
 };
 
 // Handlekurv
+// Popup
+const cartPopup = document.querySelector("#cart-popup");
+const cartPopupContent = document.querySelector("#cart-popup-content");
+
+const showCartPopup = (product) => {
+  cartPopupContent.innerHTML = `
+    <img class="cart-popup__image" src="images/${product.image}" alt="${product.name}. Foto.">
+    <h3 class="cart-popup__name">${product.name}</h3>
+    <p class="cart-popup__price">${product.price} kr</p>
+  `;
+  cartPopup.showModal();
+};
+
+const closeCartPopup = () => cartPopup.close();
+
+document.querySelector("#cart-popup-close").addEventListener("click", closeCartPopup);
+document.querySelector("#cart-popup-continue").addEventListener("click", closeCartPopup);
+
+// Lukk når man klikker på den mørke bakgrunnen
+cartPopup.addEventListener("click", (event) => {
+  if (event.target === cartPopup) closeCartPopup();
+});
+
+// Handlekurv
 const addToCartFunction = (newProduct) => {
-  const lSKey = "cart";
-
-  if (localStorage.getItem(lSKey) != null) {
-    // Hent gammel handlekurv
-    const cart = JSON.parse(localStorage.getItem(lSKey));
-    cart.push(newProduct);
-    localStorage.setItem(lSKey, JSON.stringify(cart));
-  } else {
-    // Lag ny handlekurv
-    localStorage.setItem(lSKey, JSON.stringify([newProduct]));
-  }
-
-  alert(`${newProduct.name} lagt til i handlekurv 🛒`);
+  const cart = getCart();
+  cart.push(newProduct);
+  saveCart(cart);
+  updateCartBadge();
+  showCartPopup(newProduct);
 };
 
 // EventListener 
@@ -94,3 +115,4 @@ idTxt.addEventListener("keydown", (event) => {
 
 // Kjør en default visning (f.eks. alle produkter)
 showAllProducts();
+updateCartBadge();

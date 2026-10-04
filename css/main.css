@@ -45,6 +45,35 @@ body {
 }
 
 /*
+    Teller på handlekurv-ikonet i headeren
+*/
+.header-area__cart {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #252029;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nødvendig fordi display: flex ellers overstyrer hidden */
+.cart-badge[hidden] {
+  display: none;
+}
+
+/*
     Default-stil for knappene
 */
 .button {
@@ -119,6 +148,93 @@ body {
     margin: 0 0 4px 8px;
   }
 }
+
+/*
+    Popup som vises når et produkt legges i handlekurven
+*/
+.cart-popup {
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  width: min(90%, 420px);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.2);
+}
+
+/* Den mørke bakgrunnen bak popupen */
+.cart-popup::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.cart-popup__inner {
+  padding: 20px;
+}
+
+.cart-popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.cart-popup__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-popup__check {
+  color: #3fb27f;
+}
+
+.cart-popup__close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.cart-popup__content {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.cart-popup__image {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.cart-popup__name {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-popup__price {
+  margin: 0;
+  font-weight: bold;
+  color: #c22020;
+}
+
+.cart-popup__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cart-popup__link {
+  text-align: center;
+  text-decoration: none;
+  background-color: #252029;
+  color: #ffda46;
+}
+
+.cart-popup__link:hover {
+  background-color: #3a3340;
+}
+/*----- Popup end -----*/
+
 /*
     ***
     ***

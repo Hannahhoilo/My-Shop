@@ -13,6 +13,27 @@
     </script>
 </head>
 
+<dialog class="cart-popup" id="cart-popup">
+    <div class="cart-popup__inner">
+        <header class="cart-popup__header">
+            <h2 class="cart-popup__title">
+                <i class="fa-solid fa-check cart-popup__check"></i>
+                1 stk. lagt i handlekurven
+            </h2>
+            <button class="cart-popup__close" id="cart-popup-close" aria-label="Lukk">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+
+        <div class="cart-popup__content" id="cart-popup-content"></div>
+
+        <div class="cart-popup__actions">
+            <button class="button" id="cart-popup-continue">Fortsett å handle</button>
+            <a href="side2.html" class="button cart-popup__link">Gå til handlekurv</a>
+        </div>
+    </div>
+</dialog>
+
 <body>
 
     <header class="header-area">
@@ -28,8 +49,12 @@
                 <li><a href="***">Våre partnere</a></li>
                 <li><a href="***">Om oss</a></li>
                 <li><a href="***">Kontakt</a></li>
-                <li><i class="fa-solid fa-cart-shopping"></i>
-                    <a href="side2.html">Handlekurv</a>
+                <li>
+                    <a href="side2.html" class="header-area__cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Handlekurv
+                        <span class="cart-badge" id="cart-badge" hidden>0</span>
+                    </a>
                 </li>
             </ul>
         </nav>
