@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K & K - Handlekurv</title>
+    <title>Spillbart</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="images/chicken-icon.jpg">
+    <link rel="icon" href="images/spillbart-icon.png">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
-    <script type="module" src="/scripts/side2.js"></script>
+    <script type="module" src="/scripts/side2.js">
+    </script>
 </head>
 
 <body>
@@ -16,8 +18,8 @@
     <header class="header-area">
 
         <section class="header-area__logo">
-            <i class="fa-solid fa-drumstick-bite"></i>
-            <a href="side1.html">K&K</a>
+            <i class="fa-solid fa-gamepad"></i>
+            <a href="side1.html">Spillbart</a>
         </section>
 
         <nav>
@@ -26,8 +28,12 @@
                 <li><a href="partnere.html">Våre partnere</a></li>
                 <li><a href="om-oss.html">Om oss</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
-                <li><i class="fa-solid fa-cart-shopping"></i>
-                    <a href="side2.html">Handlekurv</a>
+                <li>
+                    <a href="side2.html" class="header-area__cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Handlekurv
+                        <span class="cart-badge" id="cart-badge" hidden>0</span>
+                    </a>
                 </li>
             </ul>
         </nav>

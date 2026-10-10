@@ -30,7 +30,7 @@ const renderCart = () => {
 
     htmlTxt += `
       <article class="product-box xs-12 sm-6 md-4 lg-3">
-        <img class="img-responsive" src="images/${product.image}" alt="${product.name}" />
+        <img class="img-responsive product-box__image" src="images/${product.image}" alt="${product.name}" />
         <div class="text-content">
           <h3 class="product-box__title">${product.name}</h3>
           <p>${product.price} kr</p>

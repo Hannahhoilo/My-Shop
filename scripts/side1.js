@@ -7,7 +7,7 @@ import {
 } from "./utilities/cartUtilities.js";
 
 // Henter HTML
-const showByFrozenProductBtn = document.querySelector("#show-by-frozen-product-btn");
+const showByRetroProductBtn = document.querySelector("#show-by-retro-product-btn");
 const showAllBtn = document.querySelector("#show-all-btn");
 const productSection = document.querySelector("#product-section");
 const idTxt = document.querySelector("#id-txt");
@@ -20,11 +20,17 @@ const renderProducts = (products) => {
     htmlTxt += `
       <article class="product-box xs-12 sm-6 md-4 lg-3">
         <img 
-          class="img-responsive"
+          class="img-responsive product-box__image"
           src="images/${product.image}" 
           alt="${product.name}. Foto." />                
         <div class="text-content">
+          ${product.retroGame ? `<span class="product-box__badge">Retro</span>` : ""}
           <h3 class="product-box__title">${product.name}</h3>
+          <ul class="product-box__info">
+            <li><i class="fa-solid fa-gamepad"></i> ${product.platform}</li>
+            <li><i class="fa-regular fa-calendar"></i> ${product.releaseYear}</li>
+            <li><i class="fa-solid fa-tag"></i> ${product.condition}</li>
+          </ul>
           <p class="product-box__price">${product.price} kr</p>
           <button 
             class="button button--centered add-to-cart-btn" 
@@ -55,9 +61,9 @@ const showAllProducts = () => {
   renderProducts(ProductModule.getAll());
 };
 
-const showByFrozenProduct = () => {
-  const frozenProducts = ProductModule.getAll().filter((p) => p.frozenProduct);
-  renderProducts(frozenProducts);
+const showByRetroProduct = () => {
+  const retroProducts = ProductModule.getAll().filter((p) => p.retroGame);
+  renderProducts(retroProducts);
 };
 
 const showById = () => {
@@ -105,7 +111,7 @@ const addToCartFunction = (newProduct) => {
 
 // EventListener 
 showAllBtn.addEventListener("click", showAllProducts);
-showByFrozenProductBtn.addEventListener("click", showByFrozenProduct);
+showByRetroProductBtn.addEventListener("click", showByRetroProduct);
 
 idTxt.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
